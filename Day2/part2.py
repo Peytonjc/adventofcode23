@@ -4,6 +4,7 @@ print(inputArray)
 
 possibleDict = {'red': 12, 'green': 13, 'blue': 14}
 result = 0
+resultTwo = 0
 
 for line in inputArray:
     goodGame = True
@@ -23,9 +24,20 @@ for line in inputArray:
                 goodGame = False
             match colorType:
                 case 'red':
+                    if number > maxRed:
+                        maxRed = number
+                case 'blue':
+                    if number > maxBlue:
+                        maxBlue = number
+                case 'green':
+                    if number > maxGreen:
+                        maxGreen = number
                     #Need to add match-case statements to check against the max variables. then find the power at the end of each game
 
     if goodGame:
         result += gameID
+    resultTwo += (maxRed*maxBlue*maxGreen)
     print(gameID)
+
 print(result)
+print(resultTwo)
